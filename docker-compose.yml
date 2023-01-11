@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  localstack:
+    image: localstack/localstack
+    environment:
+      - EAGER_SERVICE_LOADING=1
+      - SERVICES=s3
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+      - AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_OUTPUT=json
+      - SKIP_SSL_CERT_DOWNLOAD=1
+      - DISABLE_CORS_CHECKS=1
+      - ENABLE_CONFIG_UPDATES=1
+    ports:
+      - 4566:4566
